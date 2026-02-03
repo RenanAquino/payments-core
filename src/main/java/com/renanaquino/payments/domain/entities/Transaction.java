@@ -2,20 +2,21 @@ package com.renanaquino.payments.domain.entities;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.UUID;
 
 import com.renanaquino.payments.domain.enums.TransactionType;
 
 public final class Transaction {
     
-    private final Long id;
-    private final Long transferId;
-    private final Long accountId;
+    private final UUID id;
+    private final UUID transferId;
+    private final UUID accountId;
     private final BigDecimal amount;
     private final Instant date;
     private final String description;
     private final TransactionType transactionType;
 
-    public Transaction(Long id, Long transferId, Long accountId, BigDecimal amount, Instant date, String description,
+    public Transaction(UUID id, UUID transferId, UUID accountId, BigDecimal amount, Instant date, String description,
             TransactionType transactionType) {
         this.id = id;
         this.transferId = transferId;
@@ -26,15 +27,15 @@ public final class Transaction {
         this.transactionType = transactionType;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public Long getTransferId() {
+    public UUID getTransferId() {
         return transferId;
     }
 
-    public Long getAccountId() {
+    public UUID getAccountId() {
         return accountId;
     }
 

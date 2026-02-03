@@ -1,8 +1,10 @@
 package com.renanaquino.payments.domain.entities;
 
+import java.util.UUID;
+
 public class User {
     
-    private Long id;
+    private UUID id;
     private String fullName;
     private String email;
     private String password;
@@ -12,7 +14,7 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String fullName, String email, String password) {
+    public User(UUID id, String fullName, String email, String password) {
         this.id = id;
         this.fullName = fullName;
         this.email = email;
@@ -21,7 +23,7 @@ public class User {
         this.isVerified = false;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return this.id;
     }
 
@@ -53,7 +55,7 @@ public class User {
     }
 
     public void verify() {
-        if (!this.isVerified) {
+        if (!this.isActive) {
             throw new RuntimeException("Inactive user cannot be verified");
         }
         if (this.isVerified) {

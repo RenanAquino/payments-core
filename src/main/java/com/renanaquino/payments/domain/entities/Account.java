@@ -1,27 +1,28 @@
 package com.renanaquino.payments.domain.entities;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 public class Account {
     
-    private Long id;
-    private Long userId;
+    private UUID id;
+    private UUID userId;
     private BigDecimal balance;
     
     public Account() {
     }
 
-    public Account(Long id, Long userId) {
+    public Account(UUID id, UUID userId) {
         this.id = id;
         this.userId = userId;
         this.balance = new BigDecimal(10000);
     }
 
-    public Long getId() {
+    public UUID getId() {
         return this.id;
     }
 
-    public Long getUserId() {
+    public UUID getUserId() {
         return this.userId;
     }
 
